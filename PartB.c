@@ -7,8 +7,8 @@ void swap(int *xp, int *yp);
 
 int main(int argc, char* argv[]) {
      
-     FILE* inputFile; 
-     FILE* outputFile; 
+     FILE *inputFile; 
+     FILE *outputFile; 
      int integers;
     
      inputFile = fopen(argv[1], "r");
@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
      exit(0);
      }
 
-     int* arr = NULL;
+     int *arr = NULL;
      int index = 0;
     
      while (fscanf(inputFile, "%d", &integers) == 1) {
