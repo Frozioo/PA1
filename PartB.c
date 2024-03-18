@@ -1,3 +1,5 @@
+// Trey Larson
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -44,7 +46,7 @@ int main(int argc, char* argv[]) {
 
      fclose(inputFile);
 
-     // Sort the array
+     // sorting the array
      for (int i = 0; i < index - 1; i++) {
         for (int j = i + 1; j < index; j++) {
           if (arr[i] > arr[j]) {
@@ -53,7 +55,6 @@ int main(int argc, char* argv[]) {
         }
      }
 
-     // Print the sorted array
      printf("The integers in file %s after sorting:\n", argv[1]);
      for (int i = 0; i < index; i++) {
         printf("%d", arr[i]);
@@ -65,20 +66,22 @@ int main(int argc, char* argv[]) {
 
      outputFile = fopen(argv[2], "w");
 
-     // Write the sorted array to the output inputFile
+     // output the sorted array into the output file
      for (int i = 0; i < index; i++) {
         fprintf(outputFile, "%d", arr[i]);
         if (i != index - 1) {
           fprintf(outputFile, " ");
         }
      }
-
+     
+     // make sure to use close and free to avoid memory leaks
+     fclose(inputFile);
      fclose(outputFile);
      free(arr);
     
      return 0;
 }
-
+// swap method for the selection sort
 void swap(int *xp, int *yp) {
      int temp = *xp;
      *xp = *yp;
