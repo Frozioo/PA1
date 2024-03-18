@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
      
      FILE* inputFile; 
      FILE* outputFile; 
-     char integers;
+     int integers;
     
      inputFile = fopen(argv[1], "r");
      
